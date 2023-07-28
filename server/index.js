@@ -13,6 +13,15 @@ const app = express();
 // Connect mongo database
 connectDB();
 
+// Middleware to set the apiBaseURL based on the environment
+app.use((req, res, next) => {
+  req.apiBaseURL =
+    process.env.NODE_ENV === "production"
+      ? "https://api.example.com"
+      : "http://localhost:3000";
+  next();
+});
+
 app.use(express.static(__dirname + "/public"));
 
 app.use(cors());
