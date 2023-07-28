@@ -13,6 +13,8 @@ const app = express();
 // Connect mongo database
 connectDB();
 
+app.use(express.static(__dirname + "/public"));
+
 app.use(cors());
 
 app.use(

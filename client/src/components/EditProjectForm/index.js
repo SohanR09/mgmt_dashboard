@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UPDATE_PROJECT } from "../../mutations/projectMutations";
 import { GET_PROJECT } from "../../queries/projectQueries";
 
@@ -20,12 +20,22 @@ export default function EditProjectForm({ project }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!name && !description && !status) {
+    if (name === "" && description === "" && status === "") {
       return alert("Please fill out all fields");
     }
 
     updateProject(name, description, status);
   };
+
+  useEffect(() => {
+    if (project.status?.length > 0) {
+      if (project.status === "Not Started") setStatus("new");
+      else if (project.status === "In Progress") setStatus("progress");
+      else if (project.status === "Completed") setStatus("completed");
+      else setStatus("new");
+    }
+  }, [project]);
+
   return (
     <div className="mt-5">
       <h3>Update Project Details</h3>
@@ -52,7 +62,7 @@ export default function EditProjectForm({ project }) {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Status</label>
+          <label className="form-label">Status: {status}</label>
           <select
             className="form-control"
             id="status"
