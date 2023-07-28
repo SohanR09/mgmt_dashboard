@@ -6,10 +6,7 @@ const schema = require("./schema/schema");
 const connectDB = require("./config/db");
 
 require("dotenv").config();
-const port =
-  process.env.NODE_ENV === "production"
-    ? "https://mgmt-dashboard-seven.vercel.app"
-    : process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 const app = express();
 
@@ -30,7 +27,6 @@ app.use(
 
 app.listen(
   port,
-  "0.0.0.0",
   console.log(
     `${new Date()}:: server runing on port "${port}"`.cyan.underline.bold
   )
