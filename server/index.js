@@ -18,7 +18,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(cors());
 
 app.use(
-  "/graphql",
+  "/api/graphql",
   graphqlHTTP({
     schema,
     graphiql: true,
