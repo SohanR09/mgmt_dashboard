@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Project from "./pages/Project";
-import { END_POINT } from "./config/helper";
+import { API_URL } from "./config/helper";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -26,7 +26,7 @@ const cache = new InMemoryCache({
 });
 
 const client = new ApolloClient({
-  uri: END_POINT,
+  uri: API_URL,
   cache,
 });
 

@@ -1,11 +1,15 @@
-const TEST_DOMAIN = "http://localhost:8000";
-const ORIGIN_DOMAIN = window.location.origin;
+export const ORGIN = window.location.origin;
+export const HOST = window.location.hostname;
+const BASE_URL = "/ClipOS";
 
-let END_POINT;
-if (window.location.origin.includes("localhost")) {
-  END_POINT = TEST_DOMAIN + "/graphql";
+export const TEST_DOMAIN = "http://localhost:8000";
+
+let API_URL = ORGIN + BASE_URL;
+
+if (HOST === "localhost") {
+  API_URL = TEST_DOMAIN + BASE_URL;
 } else {
-  END_POINT = ORIGIN_DOMAIN + "/graphql";
+  API_URL = ORGIN + BASE_URL;
 }
 
-export { END_POINT };
+export { API_URL };
