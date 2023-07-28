@@ -2,7 +2,7 @@ export const ORGIN = window.location.origin;
 export const HOST = window.location.hostname;
 const BASE_URL = "/graphql";
 
-export const TEST_DOMAIN = "http://localhost:8000";
+export const TEST_DOMAIN = "http://localhost:3000";
 
 let API_URL = ORGIN + BASE_URL;
 
