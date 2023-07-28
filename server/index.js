@@ -26,7 +26,7 @@ app.use(
 );
 
 app.listen(
-  port,
+  3000,
   console.log(
     `${new Date()}:: server runing on port "${port}"`.cyan.underline.bold
   )
