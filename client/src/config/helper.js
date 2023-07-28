@@ -1,6 +1,6 @@
 export const ORGIN = window.location.origin;
 export const HOST = window.location.hostname;
-const BASE_URL = "/ClipOS";
+const BASE_URL = "/graphql";
 
 export const TEST_DOMAIN = "http://localhost:8000";
 
