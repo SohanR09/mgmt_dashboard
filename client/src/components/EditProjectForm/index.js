@@ -62,7 +62,7 @@ export default function EditProjectForm({ project }) {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Status: {status}</label>
+          <label className="form-label">Status: </label>
           <select
             className="form-control"
             id="status"
